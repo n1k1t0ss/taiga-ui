@@ -1,5 +1,6 @@
 import {Component, Inject, TemplateRef} from '@angular/core';
 import {changeDetection} from '@demo/emulate/change-detection';
+import {TuiDocExample} from '@taiga-ui/addon-doc';
 import {
     TuiDialogContext,
     TuiDialogService,
@@ -87,6 +88,11 @@ export class ExampleTuiDialogComponent {
     readonly example6: FrontEndExample = {
         TypeScript: example6Ts,
         HTML: example6Html,
+    };
+
+    readonly example7: TuiDocExample = {
+        TypeScript: import('!!raw-loader!./examples/7/index.ts'),
+        HTML: import('!!raw-loader!./examples/7/index.html'),
     };
 
     readonly exampleImportModuleComponent = exampleImportModuleComponent;
