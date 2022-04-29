@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {TuiBaseDialogContext} from '@taiga-ui/cdk/interfaces';
+import {TuiAlertContext} from '@taiga-ui/cdk/interfaces';
 import {TuiIdService} from '@taiga-ui/cdk/services';
 import {TuiDialog} from '@taiga-ui/cdk/types';
 import {PolymorpheusComponent, PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
@@ -23,8 +23,8 @@ export abstract class AbstractTuiDialogService<T> extends Observable<
         super(observer => this.dialogs$.subscribe(observer));
     }
 
-    open<G>(
-        content: PolymorpheusContent<TuiBaseDialogContext<G> & T>,
+    open<G = void>(
+        content: PolymorpheusContent<TuiAlertContext<T, G>>,
         options: Partial<T> = {},
     ): Observable<G> {
         return new Observable(observer => {
